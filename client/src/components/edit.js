@@ -79,7 +79,7 @@ export default function Edit() {
         }
 
         return (
-            <div className="w-50 m-auto">
+            <div className="w-50 m-auto mt-3">
               <h3 className="text-center">Update Order</h3>
               <form onSubmit={onSubmit}>
                 <div className="form-group">
@@ -243,7 +243,7 @@ export default function Edit() {
                     </div>
                 </div>
                 <br />
-                <div className="form-group text-center">
+                <div className="form-group text-center mb-3">
                     <input 
                         type="submit"
                         value="Update Order"

@@ -78,7 +78,7 @@ export default function RecordList() {
     }
     return (
         <div>
-            <h3>Current Orders</h3>
+            <h3 className="mt-3 ms-3">Current Orders</h3>
             <table className="table table-striped mt-3">
                 <thead>
                     <tr>
