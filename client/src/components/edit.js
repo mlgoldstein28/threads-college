@@ -25,7 +25,7 @@ export default function Edit() {
             const response = await fetch(`http://localhost:5080/record/${params.id.toString()}`);
 
             if (!response.ok) {
-                const message = `an error has occured: ${response.statusText}`;
+                const message = `An error has occured: ${response.statusText}`;
                 window.alert(message);
                 return;
             }
@@ -52,6 +52,7 @@ export default function Edit() {
 
         async function onSubmit(e) {
             e.preventDefault();
+
             const editedOrder = {
                 date: form.date,
                 name: form.name,
@@ -64,7 +65,8 @@ export default function Edit() {
                 dateReceived: form.dateReceived,
                 contactedCust: form.contactedCust,
                 pickedUp: form.pickedUp,
-            }
+            };
+
             await fetch(`http://localhost:5080/record/${params.id}`, {
                 method: "PATCH",
                 body: JSON.stringify(editedOrder),
@@ -72,8 +74,10 @@ export default function Edit() {
                     'Content-Type': 'application/json'
                 },
             });
-            navigate("/")
+
+            navigate("/");
         }
+
         return (
             <div className="w-50 m-auto">
               <h3 className="text-center">Update Order</h3>
@@ -93,7 +97,7 @@ export default function Edit() {
                     <input
                         type="text"
                         className="form-control"
-                        id="danamete"
+                        id="name"
                         value={form.name}
                         onChange={(e) => {updateForm({name: e.target.value})}}
                     />
@@ -238,6 +242,7 @@ export default function Edit() {
                         <label htmlFor="pickedUpNo" className="form-check-label">No</label>
                     </div>
                 </div>
+                <br />
                 <div className="form-group text-center">
                     <input 
                         type="submit"

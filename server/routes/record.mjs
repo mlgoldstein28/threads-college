@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 })
 
 //Update record
-router.patch('./:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     const query = {_id: new ObjectId(req.params.id)};
     const updates = {
         $set: {
