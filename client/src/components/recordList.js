@@ -26,9 +26,10 @@ const Record = (props) => (
                     <button className="btn btn-danger h-25 m-auto" onClick={() => {
                     props.deleteRecord(props.record._id);
                     }}>Yes</button>
-                     <button className="btn btn-success m-auto" onClick={() => {document.getElementById('question').style.display = 'none'}}>No</button>
+                     <button className="btn btn-success m-auto" onClick={() => {document.getElementById('question').style.display = 'none'}}>
+                        No</button>
                 </div>
-        </div>
+            </div>
         </td>
     </tr>
 )
@@ -55,9 +56,10 @@ export default function RecordList() {
     }, [records.length]);
 
     async function deleteRecord(id) {
-        await fetch(`https://localhost:5080/record/${id}`, {
+        await fetch(`http://localhost:5080/record/${id}`, {
             method: "DELETE"
         });
+        
         const newRecords = records.filter((el) => el._id !== id);
         setRecords(newRecords)
     }

@@ -69,6 +69,13 @@ router.patch('/:id', async (req, res) => {
 });
 
 //delete a record
-    //
+router.delete("/:id", async (req, res) => {
+    const query = { _id: new ObjectId(req.params.id) };
+
+    const collection = db.collection("records");
+    let result = await collection.deleteOne(query);
+
+    res.send(result).status(200);
+})
 
 export default router;
