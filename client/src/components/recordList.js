@@ -18,14 +18,17 @@ const Record = (props) => (
             <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
             <button className="btn btn-link"
                     onClick={() => {document.getElementById('question').style.display = 'block';
-                    }}>Delete</button>
-            <div id="question" className="w-50 vh-50 bg-dark" style={{display: "none"}}>
-                <p>Are you sure you would like to delete this order?</p>
-                <button onClick={() => {
+                    }}>Delete
+            </button>
+            <div id="question" className="bg-light me-3" style={{display: "none", border: "2px solid black"}}>
+                <p className="text-dark text-center">Delete this order?</p>
+                <div className="d-flex p-3">
+                    <button className="btn btn-danger h-25 m-auto" onClick={() => {
                     props.deleteRecord(props.record._id);
-                }}>Yes, Delete Order</button>
-                <button>No, Don't Delete</button>
-            </div>
+                    }}>Yes</button>
+                     <button className="btn btn-success m-auto" onClick={() => {document.getElementById('question').style.display = 'none'}}>No</button>
+                </div>
+        </div>
         </td>
     </tr>
 )
