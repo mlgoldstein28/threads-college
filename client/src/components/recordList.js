@@ -20,7 +20,7 @@ const Record = (props) => (
                     onClick={() => {document.getElementById('question').style.display = 'block';
                     }}>Delete
             </button>
-            <div id="question" className="bg-light me-3" style={{display: "none", border: "2px solid black"}}>
+            <div id="question" className="bg-light me-3" style={{display: "none", border: "1px solid black"}}>
                 <p className="text-dark text-center">Delete this order?</p>
                 <div className="d-flex p-3">
                     <button className="btn btn-danger h-25 m-auto" onClick={() => {
