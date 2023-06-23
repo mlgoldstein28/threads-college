@@ -4,7 +4,7 @@ import threadsLogo from '../media/threadsLogo.png';
 
 export default function Navbar() {
     return (
-        <div>
+    <div>
      <nav className="navbar navbar-expand-lg navbar-light bg-light">
        <NavLink className="navbar-brand" to="/">
        <img className="w-25" alt="" src={threadsLogo} />
@@ -17,7 +17,7 @@ export default function Navbar() {
          aria-controls="navbarSupportedContent"
          aria-expanded="false"
          aria-label="Toggle navigation"
-       >
+        >
          <span className="navbar-toggler-icon"></span>
        </button>
  

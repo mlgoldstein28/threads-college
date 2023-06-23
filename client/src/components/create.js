@@ -29,7 +29,7 @@ export default function Create() {
         e.preventDefault();
 
         const newPerson = { ...form};
-        console.log(newPerson)
+        console.log(form)
 
         await fetch("http://localhost:5080/record", {
             method: "POST",

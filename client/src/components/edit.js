@@ -15,13 +15,14 @@ export default function Edit() {
         contactedCust: "",
         pickedUp: "",
     });
+
     const params = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchData() {
             const id = params.id;
-            const response = await fetch(`https://localhost:5080/records/${params.id.toString()}`);
+            const response = await fetch(`http://localhost:5080/record/${params.id.toString()}`);
 
             if (!response.ok) {
                 const message = `an error has occured: ${response.statusText}`;
@@ -64,7 +65,7 @@ export default function Edit() {
                 contactedCust: form.contactedCust,
                 pickedUp: form.pickedUp,
             }
-            await fetch(`https://localhost:5080/record/${params.id}`, {
+            await fetch(`http://localhost:5080/record/${params.id}`, {
                 method: "PATCH",
                 body: JSON.stringify(editedOrder),
                 headers: {
