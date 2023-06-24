@@ -15,6 +15,7 @@ export default function Create() {
         contactedCust: "",
         pickedUp: "",
     });
+
     const navigate = useNavigate();
 
     //update state properties
@@ -29,7 +30,7 @@ export default function Create() {
         e.preventDefault();
 
         const newPerson = { ...form};
-        console.log(form)
+        console.log(newPerson)
 
         await fetch("http://localhost:5080/record", {
             method: "POST",
@@ -75,7 +76,7 @@ export default function Create() {
                     <input
                         type="text"
                         className="form-control"
-                        id="danamete"
+                        id="name"
                         value={form.name}
                         onChange={(e) => {updateForm({name: e.target.value})}}
                     />
