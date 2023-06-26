@@ -81,7 +81,7 @@ export default function Edit() {
         return (
             <div className="w-50 m-auto mt-3">
               <h3 className="text-center">Update Order</h3>
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onSubmit} autoComplete="off">
                 <div className="form-group">
                     <label htmlFor="date">Date</label>
                     <input
