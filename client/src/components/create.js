@@ -55,12 +55,13 @@ export default function Create() {
         dateReceived: "",
         contactedCust: "",
         pickedUp: "", });
+        
         navigate("/");
     }
     return (
         <div className="w-50 m-auto p-3">
             <h3 className="text-center">Create New Order</h3>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} autoComplete="off">
                 <div className="form-group">
                     <label htmlFor="date">Date</label>
                     <input
